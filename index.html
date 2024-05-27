@@ -12,55 +12,67 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
+
 <body>
+
+  <ul class="skip-links">
+    <li><a href="#nav">Skip to Navigation</a></li>
+    <li><a href="#main">Skip to the Main Content</a></li>
+    <li><a href="#meet">Skip to Meet the Owner Section</a></li>
+    <li><a href="#contact">Skip to Contact Us Section</a></li>
+  </ul>
+
   <div class="container">
-    <div class="site-header">
+    <div class="site-header" role="banner">
       <h1>Jam Box Studios</h1>
-      <div class="main-nav">
+      <div class="main-nav" role="navigation" id="nav">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Reservation</a></li>
-          <li><a href="#">Studio</a></li>
+          <li><a href="#" aria-label="Home Page Button">Home</a></li>
+          <li><a href="#" aria-label="Products Page Button">Products</a></li>
+          <li><a href="#" aria-label="Reservation Page Button">Reservation</a></li>
+          <li><a href="#" aria-label="Studio Page Button">Studio</a></li>
         </ul>
       </div>
-      <img src="https://placekitten.com/1200/900" class="banner">
+      <img src="https://placekitten.com/200/300" alt="photo of an orange and white kitten" class="banner">
     </div>
-    <div class="main-content">
+    <div class="main-content" id="main" role="main" aria-label="Welcome to Jam Box Text">
       <h1>Welcome to Jam Box</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <div class="owner">
+      <div class="owner" id="meet" aria-label="Owner Contact Infromation">
         <h1>Meet the owner</h1>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
+        <ul itemscope itemtype="https://schema.org/Person">
+          <li itemprop="name">Name: John Doe</li>
+          <li itemprop="jobTitle">Title: CEO</li>
+          <li itemprop="email">Email: johnjoe@jambox.ca</li>
+          <li itemprop="address">Phone: 613-000-0000</li>
         </ul>
         <h1>Address</h1>
-        <p>
+        <p itemscope itemtype="https://schema.org/PostalAddress">
           Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
+          <span itemprop="streetAddress">123 Guitar Road,</span>
+          <span itemprop="addressLocality">Musicville,</span> 
+          <span itemprop="addressCountry">Danceistan</span>
+          <span itemprop="postalCode">B3T 0L0</span> 
         </p>
       </div>
-      <div class="contact-section">
+      <div class="contact-section" id="contact" aria-label="Contact Us Form">
         <h1>Contact Us</h1>
         <form action="thanks.html">
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Subject">
+          <label for="yourname">Full Name</label>
+          <input type="text" id="yourname" name="yourname" placeholder="Full Name">
+          <label for="youremail">Email</label>
+          <input type="email" id="youremail" name="youremail" placeholder="Email">
+          <label for="yoursubject">Subject</label>
+          <input type="text" id="yoursubject" name="yoursubject" placeholder="Subject">
           <b>Your Message</b>
-          <textarea></textarea>
-          <button type="submit">Send</button>
+          <textarea id="yourmessage" name="yourmessage"></textarea>
+          <button type="submit" aria-label="Send your Message Button">Send</button>
         </form>
       </div>
     </div>
-    <div class="site-footer">
-      &copy; 2021 Jam Box Studios
+    <div class="site-footer" role="contentinfo">
+      &copy; 2021 Jam Box Studios <a href="#top">Back to Top</a>
     </div>
   </div>
 </body>
